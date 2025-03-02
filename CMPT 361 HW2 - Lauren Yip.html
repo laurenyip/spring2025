@@ -1,95 +1,115 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<title>CMPT 361 HW2 - Enter your name and surname</title>
+    <title>CMPT 361 HW2 - Enter your name and surname</title>
+  </head>
+  <body>
+    <h2>CMPT 361 - Homework 2</h2>
 
-</head> <body>
+    <p>Name: <b>Lauren Yip</b></p>
+    <p>Student No: <b>301459852</b></p>
+    <p>Date: 28 February 2025</p>
 
-<h2>CMPT 361 - Homework 2</h2>
+    <h4>Honor statement:</h4>
+    <p>
+      I have not cheated in any way when doing this assignment, I did it on my
+      own. I may have asked questions about the assignment on Coursys, I know
+      that’s totally fine and even encouraged. I also already know that this
+      class is graded on a curve. I realize that if I cheat and by some miracle
+      not get caught, any increase in my grade will in turn shift the curve and
+      result in lower grades for my classmates. Any undeserved extra grade would
+      come at the cost of all others. That’s horrible! I would never do it.
+    </p>
 
-<p>Name: <b>Lauren Yip</b></p>
-<p>Student No: <b>301459852</b></p>
-<p>Date: 28 February 2025</p>
+    <h4>1: Take four photograph pairs or sets of 4.</h4>
 
-<h4>Honor statement:</h4>
-<p>I have not cheated in any way when doing this assignment, I did it on my own. I may have asked questions about the assignment on Coursys, I know that’s totally fine and even encouraged. I also already know that this class is graded on a curve. I realize that if I cheat and by some miracle not get caught, any increase in my grade will in turn shift the curve and result in lower grades for my classmates. Any undeserved extra grade would come at the cost of all others. That’s horrible! I would never do it.</p>
-
-<h4>1: Take four photograph pairs or sets of 4.</h4>
-
-<img src="S1-im1.png" alt="im1" width="300">
-<img src="S1-im2.png" alt="im2" width="300">
-<!--<br><img src="S1-im3.png" alt="im3" width="300">
+    <img src="S1-im1.png" alt="im1" width="300" />
+    <img src="S1-im2.png" alt="im2" width="300" />
+    <!--<br><img src="S1-im3.png" alt="im3" width="300">
 <img src="S1-im4.png" alt="im4" width="300">-->
-<br><br>
-<img src="S2-im1.png" alt="im1" width="300">
-<img src="S2-im2.png" alt="im2" width="300">
-<!--<br><img src="S2-im3.png" alt="im3" width="300">
+    <br /><br />
+    <img src="S2-im1.png" alt="im1" width="300" />
+    <img src="S2-im2.png" alt="im2" width="300" />
+    <!--<br><img src="S2-im3.png" alt="im3" width="300">
 <img src="S2-im4.png" alt="im4" width="300">-->
-<br><br>
-<img src="S3-im1.png" alt="im1" width="300">
-<img src="S3-im2.png" alt="im2" width="300">
-<!--<br><img src="S3-im3.png" alt="im3" width="300">
-<img src="S3-im4.png" alt="im4" width="300">-->
-<br><br>
-<img src="S4-im1.png" alt="im1" width="300">
-<img src="S4-im2.png" alt="im2" width="300">
-<!--<br><img src="S4-im3.png" alt="im3" width="300">
-<img src="S4-im4.png" alt="im4" width="300">-->
-<br><br>
+    <br /><br />
+    <img src="S3-im1.png" alt="im1" width="300" />
+    <img src="S3-im2.png" alt="im2" width="300" />
+    <img src="S3-im3.png" alt="im3" width="300" />
+    <img src="S3-im4.png" alt="im4" width="300" />
 
-<h4>2: FAST feature detector</h4>
-<img src="S1-fast.png" alt="S1-fast" width="300">
-<img src="S2-fast.png" alt="S2-fast" width="300">
+    <br /><br />
+    <img src="S4-im1.png" alt="im1" width="300" />
+    <img src="S4-im2.png" alt="im2" width="300" />
+    <img src="S4-im3.png" alt="im3" width="300" />
+    <img src="S4-im4.png" alt="im4" width="300" />
+    <br /><br />
 
-<h4>2: FASTR feature detector</h4>
-<img src="S1-fastR.png" alt="S1-fastR" width="300">
-<img src="S2-fastR.png" alt="S2-fastR" width="300">
+    <h4>2: FAST feature detector</h4>
+    <img src="S1-fast.png" alt="S1-fast" width="300" />
+    <img src="S2-fast.png" alt="S2-fast" width="300" />
 
-<p>It was very hard to tell which points were discarded, so I also made Matlab plot both sets of points on top of each other so I could easily identify. </p>
-<p>On S2-im1, there were some points on the curve of a chair in the background that got cut in the FASTR, as well as a few points on the wrist and shirt outline</p>
-<p>On S1-im1, there were a few points on the light part of the hill near the center of the image, as well as a cluster in the bottom middle</p>
-<p>FAST Keypoint Detection (avg): 0.0798 sec  -    FASTR Keypoint Detection (avg): 0.0060 sec</p>
-<p>There was a significant difference between my FAST and FASTR Keypoint detection average times (calculated the average of all 8 pictures) This difference is because with the Harris Cornerness Metric, many points are discarded earlier on - saving computation time.</p>
-<h4>3: Point description and matching</h4>
-<img src="S1-fastMatch.png" alt="S1-fastMatch" width="600">
-<br><br>
-<img src="S1-fastRMatch.png" alt="S1-fastRMatch" width="600">
-<br><br>
-<img src="S2-fastMatch.png" alt="S2-fastMatch" width="600">
-<br><br>
-<img src="S2-fastRMatch.png" alt="S2-fastRMatch" width="600">
+    <h4>2: FASTR feature detector</h4>
+    <img src="S1-fastR.png" alt="S1-fastR" width="300" />
+    <img src="S2-fastR.png" alt="S2-fastR" width="300" />
 
-<p>We know that there will be many more FAST points than FASTR points, so more matches in this case as well. However, I was a bit surprised at how many more matches I got on S1 than S2. Accounting for number of FAST/FASTR points (there were a bit more than double in S1 compared to S2), there were still more matches by more than 10x. My data is here: 
-  </p><p>S1-im1.png: 2196 FAST keypoints detected
-    S1-im2.png: 1944 FAST keypoints detected
-    Number of matches: 618
-    S1-im1.png: 1795 FASTR keypoints detected
-    S1-im2.png: 1556 FASTR keypoints detected
-    Number of matches: 497</p>  <p>S2-im1.png: 838 FAST keypoints detected
-        S2-im2.png: 914 FAST keypoints detected
-        Number of matches: 42
-        S2-im1.png: 694 FASTR keypoints detected
-        S2-im2.png: 722 FASTR keypoints detected
-        Number of matches: 35</p>
-    <p>In S2, we see many more matches in FAST compared to FASTR, in one certain section in the arm/lower area of the images</p>
-    <p>S1 does not have as obvious of discrepancies between FAST and FASTR, probably because there are so many more matches that they overlap visually.</p>
+    <p>
+      There were significant differences between FAST and FASTR - notably,
+      overall density. As for specific points, in soft areas like the clouds in
+      S1 we saw way fewer points in FASTR compared to FAST. And in S2, the round
+      areas like the box and poster features had way fewer points in FASTR than
+      FAST.
+    </p>
+    <p>
+      My average time for FAST was 1.7868 seconds and for FASTR it was
+      0.5119 seconds.
+    </p>
+    <p>
+      This is a significant difference that makes sense due the nature of the
+      functions, FASTR being more selective and quickly discarding bad points.
+    </p>
+    <h4>3: Point description and matching</h4>
+    <img src="S1-fastMatch.png" alt="S1-fastMatch" width="600" />
+    <br /><br />
+    <img src="S1-fastRMatch.png" alt="S1-fastRMatch" width="600" />
+    <br /><br />
+    <img src="S2-fastMatch.png" alt="S2-fastMatch" width="600" />
+    <br /><br />
+    <img src="S2-fastRMatch.png" alt="S2-fastRMatch" width="600" />
 
-<h4>4: RANSAC and Panoramas</h4>
-<img src="S1-panorama.png" alt="S1-panorama" width="600">
-<br><br>
-<img src="S2-panorama.png" alt="S2-panorama" width="600">
-<br><br>
-<img src="S3-panorama.png" alt="S3-panorama" width="600">
-<br><br>
-<img src="S4-panorama.png" alt="S4-panorama" width="600">
+    <p>
+      There was one noticeable outlier/wrong point in S1 FASTR. Other than that,
+      FAST and FASTR performed comparably, though as expected there are fewer
+      FASTR than FAST matches.
+    </p>
+    <h4>4: RANSAC and Panoramas</h4>
+    <img src="S1-panorama.png" alt="S1-panorama" width="600" />
+    <br /><br />
+    <img src="S2-panorama.png" alt="S2-panorama" width="600" />
+    <br /><br />
+    <img src="S3-panorama.png" alt="S3-panorama" width="600" />
+    <br /><br />
+    <img src="S4-panorama.png" alt="S4-panorama" width="600" />
 
-<p>=== Optimal RANSAC Parameters ===
-    FAST: MaxNumTrials = 1000, MaxDistance = 3
-    FASTR: MaxNumTrials = 1000, MaxDistance = 5</p>
+    <p>
+      === Optimal RANSAC Parameters === FAST: MaxNumTrials = 100, MaxDistance =
+      5 FASTR: MaxNumTrials = 50, MaxDistance = 5
+    </p>
 
-<h4>5: Large Panoramas</h4>
-<img src="S1-largepanorama.png" alt="S1-panorama" width="600">
-<br><br>
-<img src="S2-largepanorama.png" alt="S2-panorama" width="600">
+    <p>
+      I used half the number of trials on FASTR since the points are less noisy
+      already and don't require as many trials. I kept the same distance
+      allowing for a small amount of flexibility in matching. I also let FAST
+      have a lower confidence threshold because there are more points overall ->
+      fewer false positives, and FASTR has a higher confidence threshold since
+      any point is filtered already and should be good.
+    </p>
 
-
-</body> </html>
+    <h4>5: Large Panoramas</h4>
+    <img src="S1-largepanorama.png" alt="S1-panorama" width="600" />
+    <br /><br />
+    <img src="S2-largepanorama.png" alt="S2-panorama" width="600" />
+  </body>
+</html>
