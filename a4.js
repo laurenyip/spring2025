@@ -17,239 +17,186 @@ const quad = {
 };
 
 TriangleMesh.prototype.createCube = function () {
-  this.positions =
-  [-1, -1, -1, //back
-  1, -1, -1,
-  1, 1, -1,
-  -1, -1, -1,
-  1,  1, -1,
-  -1,  1, -1,
-
-  -1, 1, -1, //top
-  1, 1, 1,
-  1, 1, -1,
-  -1, 1, -1,
-  -1, 1, 1,
-  1, 1, 1,
-
-  1, -1, 1, //front
-  -1, 1, 1,
-  1, 1, 1,
-  1, -1, 1,
-  -1, -1, 1,
-  -1, 1, 1,
-
-  1, 1, 1, //right
-  1, -1, -1,
-  1, 1, -1,
-  1, 1, 1,
-  1, -1, -1,
-  1, -1, 1,
-
-  -1, 1, 1, //left
-  -1, 1, -1,
-  -1, -1, -1,
-  -1, 1, 1,
-  -1, -1, -1,
-  -1, -1, 1,
-
-  -1, -1, -1, //bottom
-  1, -1, 1,
-  -1, -1, 1,
-  -1, -1, -1,
-  1, -1, -1,
-  1, -1, 1];
-
-this.normals =
-  [0, 0, -1, //back
-  0, 0, -1,
-  0, 0, -1,
-  0, 0, -1,
-  0, 0, -1,
-  0, 0, -1,
-
-  0, 1, 0, //top
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
-
-  0, 0, 1, //front
-  0, 0, 1,
-  0, 0, 1,
-  0, 0, 1,
-  0, 0, 1,
-  0, 0, 1,
-
-  1, 0, 0, //right
-  1, 0, 0,
-  1, 0, 0,
-  1, 0, 0,
-  1, 0, 0,
-  1, 0, 0,
-
-  -1, 0, 0, //left
-  -1, 0, 0,
-  -1, 0, 0,
-  -1, 0, 0,
-  -1, 0, 0,
-  -1, 0, 0,
-
-  0, -1, 0, //bottom
-  0, -1, 0,
-  0, -1, 0,
-  0, -1, 0,
-  0, -1, 0,
-  0, -1, 0];
-
-this.uvCoords = [
  
- 
-  0.5, 0, //back
-  1, 0,
-  1, 1/3,
+  this.positions = [
+    // front 
+    1, -1, 1,    -1, -1, 1,    -1, 1, 1,
+    1, -1, 1,    -1, 1, 1,     1, 1, 1,
+    // right
+    1, -1, -1,   1, -1, 1,     1, 1, 1,  
+    1, -1, -1,   1, 1, 1,      1, 1, -1,  
+    // top
+    1, 1, 1,     -1, 1, 1,     -1, 1, -1,
+    1, 1, 1,     -1, 1, -1,    1, 1, -1,    
+    // bottom
+    1, -1, -1,   -1, -1, -1,   -1, -1, 1, 
+    1, -1, -1,   -1, -1, 1,    1, -1, 1, 
+    // left
+    -1, -1, 1,   -1, -1, -1,   -1, 1, -1, 
+    -1, -1, 1,   -1, 1, -1,    -1, 1, 1,
+    // back
+    -1, -1, -1,   1, -1, -1,   1, 1, -1,  
+    -1, -1, -1,   1, 1, -1,    -1, 1, -1, 
+  ];
+  
+  this.normals = [
+    // front
+    0,0,1,  0,0,1,  0,0,1,  0,0,1,  0,0,1,  0,0,1,
+    // right
+    1,0,0,  1,0,0,  1,0,0,  1,0,0,  1,0,0,  1,0,0,
+    // top
+    0,1,0,  0,1,0,  0,1,0,  0,1,0,  0,1,0,  0,1,0,
+    // bottom
+    0,-1,0, 0,-1,0, 0,-1,0, 0,-1,0, 0,-1,0, 0,-1,0,
+    // left
+    -1,0,0, -1,0,0, -1,0,0, -1,0,0, -1,0,0, -1,0,0,
+    // back
+    0,0,-1, 0,0,-1, 0,0,-1, 0,0,-1, 0,0,-1, 0,0,-1,
+  ];
 
-  0.5, 0,
-  1, 1/3,
-  0.5, 1/3,
-
-  0, 1/3, //top
-  0.5, 0,
-  0.5, 1/3,
-
-  0, 1/3,
-  0, 0,
-  0.5, 0,
-
-  0.5, 2/3, //front
-  0, 1,
-  0.5, 1,
-
-  0.5, 2/3,
-  0, 2/3,
-  0, 1,
-
-  0, 2/3,//right
-  0.5, 1/3,
-  0.5, 2/3,
-
-  0, 2/3,
-  0.5, 1/3,
-  0, 1/3,
-
-  1, 2/3,//left
-  0.5, 2/3,
-  0.5, 1/3,
-
-  1, 2/3,
-  0.5, 1/3,
-  1, 1/3,
-
-  0.5, 1, //bottom
-  1, 2/3,
-  1, 1,
-
-  0.5, 1,
-  0.5, 2/3,
-  1, 2/3];
+  this.uvCoords = [
+    // front
+    1/2, 2/3,   0, 2/3,     0, 1, 
+    1/2, 2/3,   0, 1,       1/2, 1,
+    // right
+    1/2, 1/3,   0, 1/3,     0, 2/3, 
+    1/2, 1/3,   0, 2/3,     1/2, 2/3,
+    // top
+    1/2, 0,     0, 0,       0, 1/3,
+    1/2, 0,     0, 1/3,     1/2, 1/3,
+    // bottom
+    1, 2/3,     1/2, 2/3,   1/2, 1, 
+    1, 2/3,     1/2, 1,     1, 1,
+    // left
+    1, 1/3,     1/2, 1/3,   1/2, 2/3,
+    1, 1/3,     1/2, 2/3,   1, 2/3, 
+    // back
+    1/2, 0,     1/2, 1/3,   1, 1/3, 
+    1/2, 0,     1, 1/3,     1, 0, 
+  ];
 }
 
-TriangleMesh.prototype.createSphere = function (stackCount, sectorCount) {
-  const radius = 1;
+TriangleMesh.prototype.createSphere = function(numStacks, numSectors) {
+
   this.positions = [];
   this.normals = [];
   this.uvCoords = [];
   this.indices = [];
 
-  for (let i = 0; i <= stackCount; i++) {
-    const stackAngle = Math.PI / 2 - i * (Math.PI / stackCount);
+  const radius = 1;
+  
+  // angle steps for spherical coordinates
+  const sectorStep = 2 * Math.PI / numSectors;
+  const stackStep = Math.PI / numStacks;
 
-    for (let j = 0; j <= sectorCount; j++) {
-      const sectorAngle = (2 * Math.PI * j) / sectorCount;
-
-      const x = Math.cos(stackAngle) * Math.cos(sectorAngle);
-      const y = Math.cos(stackAngle) * Math.sin(sectorAngle);
-      const z = Math.sin(stackAngle);
-
-      this.positions.push(x * radius, y * radius, z * radius);
+  // vertices, normals and UVs
+  for (let i = 0; i <= numStacks; i++) {
+    const stackAngle = Math.PI / 2 - i * stackStep;  // top pole
+    
+    for (let j = 0; j <= numSectors; j++) {
+      const sectorAngle = j * sectorStep;
+      
+      // vertex position
+      const x = radius * Math.cos(stackAngle) * Math.cos(sectorAngle);
+      const y = radius * Math.cos(stackAngle) * Math.sin(sectorAngle);
+      const z = radius * Math.sin(stackAngle);
+      
+      this.positions.push(x, y, z);
+      
+      //normal (same as position for unit sphere)
       this.normals.push(x, y, z);
-
-      // Modified UV calculation to show correct area and orientation, shifted left
-      const u = 1.0 - j / sectorCount + 0.25; // Added 0.25 offset to shift left
-      const v = 1.0 - i / stackCount;
+      
+      // correct UV coordinates for globe texture
+      const u = 1- j / numSectors; //rotate!
+      const v = i / numStacks;  
       this.uvCoords.push(u, v);
     }
   }
 
-  for (let i = 0; i < stackCount; i++) {
-    let k1 = i * (sectorCount + 1);
-    let k2 = k1 + sectorCount + 1;
+  // indices
+  for (let i = 0; i < numStacks; i++) {
+    let k1 = i * (numSectors + 1);
+    let k2 = k1 + numSectors + 1;
 
-    for (let j = 0; j < sectorCount; j++, k1++, k2++) {
+    for (let j = 0; j < numSectors; j++, k1++, k2++) {
       if (i !== 0) {
         this.indices.push(k1, k2, k1 + 1);
       }
-      if (i !== stackCount - 1) {
+      if (i !== numStacks - 1) {
         this.indices.push(k1 + 1, k2, k2 + 1);
       }
     }
   }
 };
 
-Scene.prototype.computeTransformation = function (transformSequence) {
-  let overallTransform = Mat4.create();
+Scene.prototype.computeTransformation = function(transformSequence) {
+  // make an identity matrix to start
+  let fullTransform = Mat4.create();
 
-  for (let i = transformSequence.length - 1; i >= 0; i--) {
-    const transform = transformSequence[i];
-    const matrix = Mat4.create();
+  // iterate through the transformation sequence 
+  // computing T*Rx first then S*(T*Rx)
+  for (let i = transformSequence.length - 1; i >= 0; --i) {
+    let transform = transformSequence[i];
+    let resultTransform = Mat4.create(); 
+    let theta = (Math.PI / 180) * -transform[1];
 
+    // determine the transformation type
     switch (transform[0]) {
-      case "T":
-        matrix[12] = transform[1];
-        matrix[13] = transform[2];
-        matrix[14] = transform[3];
+      
+      case "T": // translation
+        Mat4.set(
+          resultTransform,
+          1, 0, 0, 0,
+          0, 1, 0, 0,
+          0, 0, 1, 0,
+          transform[1], transform[2], transform[3], 1
+        );
         break;
-      case "S":
-        matrix[0] = transform[1];
-        matrix[5] = transform[2];
-        matrix[10] = transform[3];
-        break;
-      case "Rx":
-      case "Ry":
-      case "Rz": {
-        const angle = (transform[1] * Math.PI) / 180;
-        const c = Math.cos(angle);
-        const s = Math.sin(angle);
 
-        if (transform[0] === "Rx") {
-          matrix[5] = c;
-          matrix[6] = -s;
-          matrix[9] = s;
-          matrix[10] = c;
-        } else if (transform[0] === "Ry") {
-          matrix[0] = c;
-          matrix[2] = s;
-          matrix[8] = -s;
-          matrix[10] = c;
-        } else {
-          matrix[0] = c;
-          matrix[1] = -s;
-          matrix[4] = s;
-          matrix[5] = c;
-        }
+      case "S": // scale
+        Mat4.set(
+          resultTransform,
+          transform[1], 0, 0, 0,
+          0, transform[2], 0, 0,
+          0, 0, transform[3], 0,
+          0, 0, 0, 1
+        );
         break;
-      }
+        
+      case "Rx": // rotation around x-axis
+        Mat4.set(
+          resultTransform,
+          1, 0, 0, 0,
+          0, Math.cos(theta), -Math.sin(theta), 0,
+          0, Math.sin(theta), Math.cos(theta), 0,
+          0, 0, 0, 1
+        );
+        break;
+
+      case "Ry": // rotation around y-axis
+        Mat4.set(
+          resultTransform,
+          Math.cos(theta), 0, Math.sin(theta), 0,
+          0, 1, 0, 0,
+          -Math.sin(theta), 0, Math.cos(theta), 0,
+          0, 0, 0, 1
+        );
+        break;
+
+      case "Rz": // rotation around z-axis
+        Mat4.set(
+          resultTransform,
+          Math.cos(theta), -Math.sin(theta), 0, 0,
+          Math.sin(theta), Math.cos(theta), 0, 0,
+          0, 0, 1, 0,
+          0, 0, 0, 1
+        );
+        break;
     }
-
-    overallTransform = Mat4.multiply(
-      overallTransform,
-      overallTransform,
-      matrix
-    );
+    Mat4.multiply(fullTransform, fullTransform, resultTransform);
   }
 
-  return overallTransform;
+  return fullTransform;
 };
 
 Renderer.prototype.VERTEX_SHADER = `
@@ -308,7 +255,7 @@ void main() {
 ////////////////////////////////////////////////////////////////////////////////
 // EXTRA CREDIT: change DEF_INPUT to create something interesting!
 ////////////////////////////////////////////////////////////////////////////////
-const DEF_INPUT = [
+/*const DEF_INPUT = [
   "c,myCamera,perspective,5,5,5,0,0,0,0,1,0;",
   "l,myLight,point,0,5,0,2,2,2;",
   "p,unitCube,cube;",
@@ -325,6 +272,31 @@ const DEF_INPUT = [
   "X,gd,Ry,45;X,gd,S,0.5,0.5,0.5;X,gd,T,2,0,2;",
   "X,bd,S,0.5,0.5,0.5;X,bd,Rx,90;X,bd,T,2,0,-1;",
   "X,gl,S,1.5,1.5,1.5;X,gl,Rx,90;X,gl,Ry,-150;X,gl,T,0,1.5,0;",
+].join("\n");*/
+
+const DEF_INPUT = [
+  "c,myCamera,perspective,8,5,8,0,1,0,0,1,0;",
+  "l,myLight,point,5,10,5,1.5,1.5,1.5;",
+  "p,unitCube,cube;",
+  "p,unitSphere,sphere,20,20;",
+  "m,shellMat,0.2,0.15,0.1,0.5,0.4,0.3,0.3,0.3,0.3,10;",
+  "m,bodyMat,0.1,0.2,0.1,0.3,0.5,0.3,0.5,0.5,0.5,30;",
+  "m,headMat,0.8,0.7,0.1,0.9,0.8,0.2,0.8,0.8,0.8,50;",
+  "m,waterMat,0.1,0.1,0.3,0.3,0.3,0.8,0.8,0.8,0.8,100;",
+  "o,shell,unitSphere,shellMat;X,shell,S,1.5,0.8,1.5;",
+  "o,body,unitSphere,bodyMat;X,body,S,1.2,0.6,1.2;X,body,T,0,-0.2,0;",
+  "o,head,unitSphere,headMat;X,head,S,0.5,0.5,0.7;X,head,T,1.2,0.3,0;",
+  "o,water,unitCube,waterMat;X,water,S,5,0.1,5;X,water,T,0,-0.9,0;",
+  "X,shell,Ry,20;X,head,Ry,-30;",
+  "m,redDiceMat,0.3,0,0,0.7,0,0,1,1,1,15,dice.jpg;",
+  "m,grnDiceMat,0,0.3,0,0,0.7,0,1,1,1,15,dice.jpg;",
+  "m,bluDiceMat,0,0,0.3,0,0,0.7,1,1,1,15,dice.jpg;",
+  "m,globeMat,0.3,0.3,0.3,0.7,0.7,0.7,1,1,1,5,globe.jpg;",
+  "o,rd,unitCube,redDiceMat;X,rd,Rz,75;X,rd,Rx,90;X,rd,S,0.5,0.5,0.5;X,rd,T,-1,0,2;",
+  "o,gd,unitCube,grnDiceMat;X,gd,Ry,45;X,gd,S,0.5,0.5,0.5;X,gd,T,2,0,2;",
+  "o,bd,unitCube,bluDiceMat;X,bd,S,0.5,0.5,0.5;X,bd,Rx,90;X,bd,T,2,0,-1;",
+  "o,gl,unitSphere,globeMat;X,gl,S,1.5,1.5,1.5;X,gl,Rx,90;X,gl,Ry,-150;X,gl,T,0,1.5,0;"
+  
 ].join("\n");
 
 // DO NOT CHANGE ANYTHING BELOW HERE
